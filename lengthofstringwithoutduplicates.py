@@ -7,6 +7,9 @@ class Solution:
             seen.append(character)
             count += 1
 
+    return count
 
-print Solution().lengthOfLongestSubstring('abrkaabcdefghijjxxx')
+ 
+a= Solution().lengthOfLongestSubstring('abcdeffffffffff')
+print(a)
 # 10
