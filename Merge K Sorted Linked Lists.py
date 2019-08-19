@@ -19,7 +19,7 @@ def merge(lists):
     while current:
       arr.append(current.val)
       current = current.next
-  new_head = current = Node(-1)  # dummy head
+  new_head = current = Node(0)  # dummy head
   for val in sorted(arr):
     current.next = Node(val)
     current = current.next
@@ -27,5 +27,6 @@ def merge(lists):
 
 a = Node(1, Node(3, Node(5)))
 b = Node(2, Node(4, Node(6)))
-print merge([a, b])
+c = merge([a, b])
+print(c)
 # 123456S
