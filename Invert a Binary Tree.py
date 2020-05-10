@@ -17,7 +17,6 @@ def invert(node):
   return node
 
 
-
 root = Node('a') 
 root.left = Node('b') 
 root.right = Node('c') 
