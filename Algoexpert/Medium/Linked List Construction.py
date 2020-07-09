@@ -3,8 +3,8 @@ class Node:
         self.val = val
         self.next = None
 
-class MyLinkedList:
 
+class MyLinkedList:
     def __init__(self):
         """
         Initialize your data structure here.
@@ -16,7 +16,7 @@ class MyLinkedList:
         """
         Get the value of the index-th node in the linked list. If the index is invalid, return -1.
         """
-        if index < 0 or index > self.size -1 or not self.head :
+        if index < 0 or index > self.size - 1 or not self.head:
             return -1
         else:
             node_at_index = self.head
@@ -31,7 +31,7 @@ class MyLinkedList:
         newnode = Node(val)
         newnode.next = self.head
         self.head = newnode
-        self.size +=1
+        self.size += 1
 
     def addAtTail(self, val: int) -> None:
         """
@@ -39,11 +39,10 @@ class MyLinkedList:
         """
         newnode = Node(val)
         current_node = self.head
-        for i in range(self.size-1):
+        for i in range(self.size - 1):
             current_node = current_node.next
         current_node.next = newnode
-        self.size +=1
-        
+        self.size += 1
 
     def addAtIndex(self, index: int, val: int) -> None:
         """
