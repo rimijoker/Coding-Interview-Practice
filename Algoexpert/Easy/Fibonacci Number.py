@@ -8,5 +8,5 @@ class Solution:
     def memoize(self, N: int) -> {}:
         if N in self.cache.keys():
             return self.cache[N]
-        self.cache[N] = self.memoize(N-1) + self.memoize(N-2)
+        self.cache[N] = self.memoize(N - 1) + self.memoize(N - 2)
         return self.memoize(N)
