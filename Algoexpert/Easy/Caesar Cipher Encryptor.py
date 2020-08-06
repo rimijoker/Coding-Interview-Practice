@@ -5,8 +5,8 @@ def encode_char(char, key):
 
 def caesarCipherEncryptor(string, key):
     # Write your code here.
-    return ''.join([encode_char(char, key) for char in string])
+    return "".join([encode_char(char, key) for char in string])
 
 
-if __name__ == '__main__':
-    print(caesarCipherEncryptor('abc', 12))
+if __name__ == "__main__":
+    print(caesarCipherEncryptor("abc", 12))
