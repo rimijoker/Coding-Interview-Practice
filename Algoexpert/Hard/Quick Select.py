@@ -6,7 +6,7 @@ def quickSelect(array, k):
 def quickSelectHelper(array, startIdx, endIdx, position):
     while True:
         if startIdx > endIdx:
-            return
+            raise Exception("Algorithm should never be here!")
         pivotIdx = startIdx
         leftIdx = startIdx + 1
         rightIdx = endIdx
