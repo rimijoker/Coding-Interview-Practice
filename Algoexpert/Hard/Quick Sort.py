@@ -1,4 +1,4 @@
-# O(N logN) time(average case) | O(N^2) time (worst case) | O{logN} space
+# O(N logN) time(average case) | O(N^2) time (worst case) | O(logN) space
 
 
 def quickSort(array):
