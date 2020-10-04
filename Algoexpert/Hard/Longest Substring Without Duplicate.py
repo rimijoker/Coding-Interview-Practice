@@ -1,3 +1,6 @@
+# O(N) time | O(N) space
+
+
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """
