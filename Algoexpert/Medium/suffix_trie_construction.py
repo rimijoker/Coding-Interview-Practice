@@ -1,9 +1,10 @@
 """
- The way we can build our Suffix-Trie is to use a bunch of hash tables or dictionaries. Where every node in the suffix
- tree is gonna be a Key in a dictionary, pointing to another dictionary/HashTable (the value of the key will store of
- the next node's dictionary directly so basically, it will be a nested dictionary of dictionary). And all the values in
- the dictionary, will be the other nodes in the tree whose keys will be a specific letter that comes after the previous
- letter, and that points to another hash table, and so on and so forth.
+The way we can build our Suffix-Trie is to use a bunch of hash tables or dictionaries. Where every
+node in the suffix tree is gonna be a Key in a dictionary, pointing to another dictionary/HashTable
+(the value of the key will store of the next node's dictionary directly so basically, it will be a
+nested dictionary of dictionary). And all the values in the dictionary, will be the other nodes in
+the tree whose keys will be a specific letter that comes after the previous letter, and that
+points to another hash table, and so on and so forth.
 """
 
 
@@ -36,7 +37,7 @@ class Trie:
             trie = trie[character]
         return "is_word" in trie
 
-    def startsWith(self, prefix: str) -> bool:
+    def starts_with(self, prefix: str) -> bool:
         """
         Returns if there is any word in the trie that starts with the given prefix.
         """
@@ -52,4 +53,4 @@ class Trie:
 # obj = Trie()
 # obj.insert(word)
 # param_2 = obj.search(word)
-# param_3 = obj.startsWith(prefix)
+# param_3 = obj.starts_with(prefix)
