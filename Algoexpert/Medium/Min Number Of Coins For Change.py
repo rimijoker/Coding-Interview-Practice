@@ -1,3 +1,6 @@
+# O(NM) time | O(N) space
+
+
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
 
@@ -5,12 +8,13 @@ class Solution:
 
         for coin in coins:
             for current_amount in range(coin, amount + 1):
+                # the new min may be min of coins required to make up
+                # balance(taking out the value of coin in current amount) +1 (adding value of coin)
                 balance = current_amount - coin
                 minimum_number_of_coins[current_amount] = min(
                     minimum_number_of_coins[current_amount],
                     minimum_number_of_coins[balance] + 1,
-                )  # the new min may be min of coins required to make up
-                # balance(taking out the value of coin in current amount) + 1 (adding back the value of coin)
+                )
 
         return (
             minimum_number_of_coins[amount]
