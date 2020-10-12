@@ -1,3 +1,6 @@
+# O(NM) time | O(N) space
+
+
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
 
