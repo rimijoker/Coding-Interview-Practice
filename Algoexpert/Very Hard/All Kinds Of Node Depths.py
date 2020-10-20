@@ -78,3 +78,34 @@ def addNodeCount(node, nodeCounts):
     if node.right is not None:
         addNodeCount(node.right, nodeCounts)
         nodeCounts[node] += nodeCounts[node.right]
+
+
+# O(N) time | O(d) space where d is depth
+
+
+def allKindsOfNodeDepths(root):
+    return getTreeInfo(root).sumOfAllDepths
+
+
+def getTreeInfo(tree):
+    if tree is None:
+        return TreeInfo(0, 0, 0)
+    leftTreeInfo = getTreeInfo(tree.left)
+    rightTreeInfo = getTreeInfo(tree.right)
+
+    sumOfLeftDepths = leftTreeInfo.sumOfDepths + leftTreeInfo.numNodesInTree
+    sumOfRightDepths = rightTreeInfo.sumOfDepths + rightTreeInfo.numNodesInTree
+
+    numNodesInTree = 1 + leftTreeInfo.numNodesInTree + rightTreeInfo.numNodesInTree
+    sumOfDepths = sumOfLeftDepths + sumOfRightDepths
+    sumOfAllDepths = (
+        sumOfDepths + leftTreeInfo.sumOfAllDepths + rightTreeInfo.sumOfAllDepths
+    )
+    return TreeInfo(numNodesInTree, sumOfDepths, sumOfAllDepths)
+
+
+class TreeInfo:
+    def __init__(self, numNodesInTree, sumOfDepths, sumOfAllDepths):
+        self.numNodesInTree = numNodesInTree
+        self.sumOfDepths = sumOfDepths
+        self.sumOfAllDepths = sumOfAllDepths
