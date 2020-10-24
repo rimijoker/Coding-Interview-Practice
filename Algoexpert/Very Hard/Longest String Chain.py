@@ -44,4 +44,4 @@ def buildLongestStringChain(strings, stringChains):
     while currentString != "":
         finalLongestStringChain.append(currentString)
         currentString = stringChains[currentString]["nextString"]
-    return [] if len(finalLongestStringChain) == 1 else longestStringChain()
+    return [] if len(finalLongestStringChain) == 1 else finalLongestStringChain
