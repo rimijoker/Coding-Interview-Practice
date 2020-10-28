@@ -1,9 +1,6 @@
 # O(NK) time | O(N + K) space where k is number of arrays
 
 
-import heapq
-
-
 def mergeSortedArrays(arrays):
     sortedList = []
     elementIdxs = [0 for _ in arrays]
