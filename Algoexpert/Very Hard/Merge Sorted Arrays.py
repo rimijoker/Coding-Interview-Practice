@@ -1,6 +1,9 @@
 # O(NK) time | O(N + K) space where k is number of arrays
 
 
+import heapq
+
+
 def mergeSortedArrays(arrays):
     sortedList = []
     elementIdxs = [0 for _ in arrays]
@@ -124,3 +127,30 @@ class MinHeap:
 
     def swap(self, i, j, heap):
         heap[i], heap[j] = heap[j], heap[i]
+
+
+# O(N log K) time | O(N + K) space where k is number of arrays
+# Using heapq
+
+
+def mergeSortedArrays(arrays):
+    import heapq
+
+    sortedList = []
+    minHeap = []
+    elementIdx = 0
+    for arrayIdx in range(len(arrays)):
+        heapq.heappush(minHeap, (arrays[arrayIdx][elementIdx], arrayIdx, elementIdx))
+    while True:
+        if len(minHeap) == 0:
+            break
+        num, arrayIdx, elementIdx = heapq.heappop(minHeap)
+        sortedList.append(num)
+        if elementIdx == len(arrays[arrayIdx]) - 1:
+            continue
+        else:
+            elementIdx += 1
+            heapq.heappush(
+                minHeap, (arrays[arrayIdx][elementIdx], arrayIdx, elementIdx)
+            )
+    return sortedList
